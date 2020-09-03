@@ -11,11 +11,15 @@ import UIKit
 class CaculatorViewController: UIViewController {
 
     @IBOutlet weak var billTextField: UITextField!
+    @IBOutlet weak var supportingMoneyTextField: UITextField!
     @IBOutlet weak var fiveButton: UIButton!
     @IBOutlet weak var tenButton: UIButton!
     @IBOutlet weak var twentyButton: UIButton!
     @IBOutlet weak var zeroButton: UIButton!
     @IBOutlet weak var splitsNumberLable: UILabel!
+    
+    var billTotal:Float?
+    var supportingMoney:Float?
     
     
     @IBAction func tipsChanged(_ sender: UIButton) {
