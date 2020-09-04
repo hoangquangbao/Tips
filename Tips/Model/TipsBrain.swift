@@ -9,5 +9,5 @@
 import Foundation
 
 func tipsValue() {
-    <#function body#>
+    //<#function body#>
 }
