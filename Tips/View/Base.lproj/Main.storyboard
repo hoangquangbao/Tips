@@ -167,7 +167,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="NUc-wr-Rhs"/>
                                                         </constraints>
                                                         <connections>
-                                                            <action selector="splitChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="c3y-1H-hZR"/>
+                                                            <action selector="splitValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="c3y-1H-hZR"/>
                                                         </connections>
                                                     </stepper>
                                                 </subviews>
@@ -192,9 +192,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI1-Ua-bTL">
-                                <rect key="frame" x="107" y="768" width="200" height="54"/>
+                                <rect key="frame" x="97" y="768" width="220" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="UMQ-YS-hl1"/>
+                                    <constraint firstAttribute="width" constant="220" id="UMQ-YS-hl1"/>
                                     <constraint firstAttribute="height" constant="54" id="qUE-dC-rE2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
@@ -238,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="04u-FA-41e">
             <objects>
-                <viewController id="6dP-Rq-sMs" sceneMemberID="viewController">
+                <viewController id="6dP-Rq-sMs" customClass="ResultsViewController" customModule="Tips" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lgq-iP-m4t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -296,19 +296,40 @@
                                     <constraint firstItem="4vK-pB-Zek" firstAttribute="leading" secondItem="Wer-ZS-s8O" secondAttribute="leading" id="oOZ-zP-qed"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfc-LP-AJU">
+                                <rect key="frame" x="97" y="768" width="220" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Tju-Xv-QOE"/>
+                                    <constraint firstAttribute="width" constant="220" id="lVN-5u-Q3T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="Recaculator" backgroundImage="choice2Background">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="caculatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtF-9k-Zcg"/>
+                                    <action selector="recaculatorPressed:" destination="6dP-Rq-sMs" eventType="touchUpInside" id="xaw-ch-I3Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Wer-ZS-s8O" firstAttribute="leading" secondItem="lgq-iP-m4t" secondAttribute="leading" id="Erm-J9-aq5"/>
                             <constraint firstItem="rkZ-oy-3eo" firstAttribute="trailing" secondItem="AU7-Ng-28n" secondAttribute="trailing" id="IQ5-MJ-ahs"/>
                             <constraint firstItem="AU7-Ng-28n" firstAttribute="top" secondItem="rkZ-oy-3eo" secondAttribute="top" constant="100" id="Icf-xk-l75"/>
+                            <constraint firstItem="lfc-LP-AJU" firstAttribute="centerX" secondItem="lgq-iP-m4t" secondAttribute="centerX" id="Mya-Ln-M48"/>
                             <constraint firstItem="Wer-ZS-s8O" firstAttribute="top" secondItem="AU7-Ng-28n" secondAttribute="bottom" constant="10" id="Nfb-U6-KIp"/>
                             <constraint firstAttribute="bottom" secondItem="Wer-ZS-s8O" secondAttribute="bottom" id="Ou3-qx-DGI"/>
                             <constraint firstItem="AU7-Ng-28n" firstAttribute="leading" secondItem="rkZ-oy-3eo" secondAttribute="leading" id="X6u-QD-7zq"/>
                             <constraint firstAttribute="trailing" secondItem="Wer-ZS-s8O" secondAttribute="trailing" id="oBo-8q-hgA"/>
+                            <constraint firstItem="rkZ-oy-3eo" firstAttribute="bottom" secondItem="lfc-LP-AJU" secondAttribute="bottom" constant="40" id="tpt-81-IEy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rkZ-oy-3eo"/>
                     </view>
+                    <connections>
+                        <outlet property="notesLable" destination="IXg-n9-pw3" id="p06-Wn-OnK"/>
+                        <outlet property="totalLable" destination="hB7-CA-qcw" id="hv4-2z-PyU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPZ-mn-Jdl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

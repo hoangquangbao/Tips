@@ -6,4 +6,6 @@
 //  Copyright © 2020 Boboli. All rights reserved.
 //
 
-import Foundation
+struct Tips {
+    var tipsValue:Float
+}

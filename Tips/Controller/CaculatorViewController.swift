@@ -18,13 +18,20 @@ class CaculatorViewController: UIViewController {
     @IBOutlet weak var zeroButton: UIButton!
     @IBOutlet weak var splitsNumberLable: UILabel!
     
+    var caculator:TipsBrain?
+    
     var billTotal:Float?
     var supportingMoney:Float?
     
     
     @IBAction func tipsChanged(_ sender: UIButton) {
+        var tipsPercent = sender.tag
+        print(billTextField.text)
+        
+        
+        //caculator?.getTipsValue(billTotal: billTextField.text ?? 0.0, supportingMoney: <#T##String#>, tipsPercent: <#T##Float#>)
     }
-    @IBAction func splitChanged(_ sender: UIStepper) {
+    @IBAction func splitValueChanged(_ sender: UIStepper) {
     }
     @IBAction func caculatorPressed(_ sender: UIButton) {
     }

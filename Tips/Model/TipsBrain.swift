@@ -6,8 +6,13 @@
 //  Copyright © 2020 Boboli. All rights reserved.
 //
 
-import Foundation
 
-func tipsValue() {
-    //<#function body#>
+struct TipsBrain {
+    
+    var tips:Tips?
+    
+    func getTipsValue(billTotal:String, supportingMoney:String, tipsPercent:Float) {
+        
+    }
+    
 }

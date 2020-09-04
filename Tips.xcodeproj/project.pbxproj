@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		060D60BB25000F09003B3B03 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D60BA25000F09003B3B03 /* Tips.swift */; };
+		065ED5C12502831D00C850D6 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065ED5C02502831D00C850D6 /* ResultsViewController.swift */; };
 		06BC9D65250136A30073C037 /* TipsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC9D64250136A30073C037 /* TipsBrain.swift */; };
 		06E986C824F86839008ECB64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E986C724F86839008ECB64 /* AppDelegate.swift */; };
 		06E986CA24F86839008ECB64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E986C924F86839008ECB64 /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		060D60BA25000F09003B3B03 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
+		065ED5C02502831D00C850D6 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		06BC9D64250136A30073C037 /* TipsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsBrain.swift; sourceTree = "<group>"; };
 		06E986C424F86838008ECB64 /* Tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06E986C724F86839008ECB64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				06E986CB24F86839008ECB64 /* CaculatorViewController.swift */,
+				065ED5C02502831D00C850D6 /* ResultsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				06E986C824F86839008ECB64 /* AppDelegate.swift in Sources */,
 				06E986CA24F86839008ECB64 /* SceneDelegate.swift in Sources */,
 				06BC9D65250136A30073C037 /* TipsBrain.swift in Sources */,
+				065ED5C12502831D00C850D6 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
