@@ -11,8 +11,8 @@ struct TipsBrain {
     
     var tips:Tips?
     
-    func getTipsValue(billTotal:String, supportingMoney:String, tipsPercent:Float) {
-        
+    func getTipsPercent(_ tipsPercent:Float) {
+        print(tipsPercent / 100)
     }
     
 }

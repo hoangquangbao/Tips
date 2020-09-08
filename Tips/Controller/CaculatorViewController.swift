@@ -22,18 +22,35 @@ class CaculatorViewController: UIViewController {
     
     var billTotal:Float?
     var supportingMoney:Float?
+    var tipsPercent:Float?
     
     
     @IBAction func tipsChanged(_ sender: UIButton) {
-        var tipsPercent = sender.tag
-        print(billTextField.text)
         
+        //Hidding the keyboard
+        billTextField.endEditing(true)
+        supportingMoneyTextField.endEditing(true)
         
-        //caculator?.getTipsValue(billTotal: billTextField.text ?? 0.0, supportingMoney: <#T##String#>, tipsPercent: <#T##Float#>)
+        //The first: Unselected for all Button by .isSeclected = false
+        fiveButton.isSelected = false
+        tenButton.isSelected = false
+        twentyButton.isSelected = false
+        zeroButton.isSelected = false
+        //The second: Show the selected button by sender.isSelected = true
+        sender.isSelected = true
+        
+        tipsPercent = Float(sender.tag)
     }
+    
     @IBAction func splitValueChanged(_ sender: UIStepper) {
+        splitsNumberLable.text = String(format: "%.0f", sender.value)
     }
+    
     @IBAction func caculatorPressed(_ sender: UIButton) {
+        
+        //caculator?.getTipsPercent(tipsPercent: tipsPercent!)
+        //caculator?.getTipsPercent(tipsPercent!)
+        print(tipsPercent!/100)
     }
     
 }
