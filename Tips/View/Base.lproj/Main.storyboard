@@ -306,7 +306,7 @@
                                     <constraint firstAttribute="width" constant="220" id="lVN-5u-Q3T"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <state key="normal" title="Recaculator" backgroundImage="choice2Background">
+                                <state key="normal" title="Back" backgroundImage="choice2Background">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
