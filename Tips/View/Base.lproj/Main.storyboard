@@ -172,7 +172,7 @@
                                                             <constraint firstAttribute="width" constant="95" id="RYb-cC-E46"/>
                                                         </constraints>
                                                         <connections>
-                                                            <action selector="splitValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="idB-wP-1ZE"/>
+                                                            <action selector="splitPeople:" destination="BYZ-38-t0r" eventType="valueChanged" id="idB-wP-1ZE"/>
                                                         </connections>
                                                     </stepper>
                                                 </subviews>

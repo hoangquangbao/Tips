@@ -7,5 +7,9 @@
 //
 
 struct Tips {
-    var tipsValue:Float
+    
+    var tipsPercent: Double
+    var splitPeople: Double
+    var intoMoney: Double
+    
 }

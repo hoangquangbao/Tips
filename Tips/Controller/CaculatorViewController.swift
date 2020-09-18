@@ -18,12 +18,12 @@ class CaculatorViewController: UIViewController {
     @IBOutlet weak var zeroButton: UIButton!
     @IBOutlet weak var splitsNumberLable: UILabel!
     
-    var caculator:TipsBrain?
+    var caculator = TipsBrain()
     
 //    var billTotal:String?
 //    var supportingMoney:String?
     var tipsPercent:Double = 0
-    var peopleNumber:Double = 2
+//    var peopleNumber:Double = 2
     
     
     @IBAction func tipsChanged(_ sender: UIButton) {
@@ -40,13 +40,13 @@ class CaculatorViewController: UIViewController {
         //The second: Show the selected button by sender.isSelected = true
         sender.isSelected = true
         
-        tipsPercent = Double(sender.tag/100)
+        caculator.getTipsPercent(sender.tag)
     }
     
-    @IBAction func splitValueChanged(_ sender: UIStepper) {
+    @IBAction func splitPeople(_ sender: UIStepper) {
         
-        peopleNumber = sender.value + 1
-        splitsNumberLable.text = String(format: "%.0f", peopleNumber)
+        splitsNumberLable.text = String(format: "%.0f", sender.value + 1)
+        caculator.getSplitPeople(sender.value + 1)
     }
     
     @IBAction func caculatorPressed(_ sender: UIButton) {
@@ -54,11 +54,7 @@ class CaculatorViewController: UIViewController {
         let billTotal = Double(billTextField.text!) ?? 0
         let supportingMoney = Double(supportingMoneyTextField.text!) ?? 0
         
-        let total = billTotal - supportingMoney
-        let result: Double = (total + total*tipsPercent)/peopleNumber
-        
-        print(result)
+        caculator.getIntoMoney(billTotal, supportingMoney)
     }
-    
 }
 
