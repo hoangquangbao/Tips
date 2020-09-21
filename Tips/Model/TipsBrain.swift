@@ -9,11 +9,11 @@
 
 struct TipsBrain {
     
-    var tips:Tips?
+    var tips: Tips?
     var finalValue:Double = 0
     
     
-    mutating func getTipsPercent(_ tipsPercent:Int) {
+    mutating func getTipsPercent(_ tipsPercent: Int) {
         
         tips?.tipsPercent = Double(tipsPercent / 100)
     }
@@ -24,8 +24,12 @@ struct TipsBrain {
     
     mutating func getIntoMoney(_ billTotal: Double,_ supportingMoney: Double) {
         let total = billTotal - supportingMoney
-        finalValue = ((total + (total*tips!.tipsPercent))/tips!.splitPeople)
+        let tipsPercent = tips?.tipsPercent ?? 0.0
+        let splitPeople = tips?.splitPeople ?? 0.0
+        
+        finalValue = ((total + total*tipsPercent)/splitPeople)
         tips?.intoMoney = finalValue
+        // Giải quyết đc việc đưa giá trị vào thì mô hình MVC này là OK
+        print(tips?.intoMoney)
     }
-    //Lấy đc giá trị Tip
 }
