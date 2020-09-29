@@ -9,19 +9,24 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
-    var tipsPercentRes = 10
-    var peopleNumberRes = 2
-    var resultRes = 0.0
+    
+    var tipRS = 0
+    var peopleRS = 2
+    var resultRS = 0.0
     
     @IBOutlet weak var notesLable: UILabel!
-    @IBOutlet weak var resultTipsLable: UILabel!
+    @IBOutlet weak var resultLable: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resultTipsLable.text = String(format: "%.0f", resultRes)
-        notesLable.text = "Split between \(peopleNumberRes) peoples with \(tipsPercentRes)% tips"
+        if (resultRS > 0) {
+            resultLable.text = String(format: "%.0f", resultRS)
+            notesLable.text = "Split between \(peopleRS) peoples with \(tipRS)% tips"
+        } else {
+            resultLable.text = String(format: "%.0f", 0)
+            notesLable.text = "No one should have to pay"
+        }
     }
     
     @IBAction func recaculatorPressed(_ sender: UIButton) {

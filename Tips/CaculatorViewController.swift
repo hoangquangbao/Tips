@@ -11,18 +11,18 @@ import UIKit
 class CaculatorViewController: UIViewController {
 
     @IBOutlet weak var billTextField: UITextField!
-    @IBOutlet weak var supportingMoneyTextField: UITextField!
+    @IBOutlet weak var publicMoneyTextField: UITextField!
     
     @IBOutlet weak var fiveButton: UIButton!
     @IBOutlet weak var tenButton: UIButton!
     @IBOutlet weak var twentyButton: UIButton!
     @IBOutlet weak var zeroButton: UIButton!
     
-    @IBOutlet weak var splitsPeoplesLable: UILabel!
+    @IBOutlet weak var peopleLable: UILabel!
     
     
-    var tipsPercent: Double = 0
-    var peopleNumber: Double = 2
+    var tip: Double = 0
+    var people:Int = 2
     var result: Double = 0
     
     
@@ -31,7 +31,7 @@ class CaculatorViewController: UIViewController {
         
         //Hidding the keyboard
         billTextField.endEditing(true)
-        supportingMoneyTextField.endEditing(true)
+        publicMoneyTextField.endEditing(true)
         
         //The first: Unselected for all Button by .isSeclected = false
         fiveButton.isSelected = false
@@ -41,20 +41,21 @@ class CaculatorViewController: UIViewController {
         //The second: Show the selected button by sender.isSelected = true
         sender.isSelected = true
         
-        tipsPercent = Double(sender.tag) / Double(100)
+        tip = Double(sender.tag) / Double(100)
     }
     
     @IBAction func peopleChange(_ sender: UIStepper) {
-        peopleNumber = sender.value + 1
-        splitsPeoplesLable.text = String(format: "%.0f", peopleNumber)
-        print(peopleNumber)
+        people = Int(sender.value + 1)
+        peopleLable.text = String(format: "%.0f", people)
+        print(people)
     }
     
     @IBAction func caculatorPressed(_ sender: UIButton) {
-        let billTotal = Double(billTextField.text!) ?? 0.0
-        let supportingMoney = Double(supportingMoneyTextField.text!) ?? 0.0
-        let total = billTotal + billTotal*tipsPercent
-        result = (total - supportingMoney) / peopleNumber
+        let bill = Double(billTextField.text!) ?? 0.0
+        let publicMoney = Double(publicMoneyTextField.text!) ?? 0.0
+        let total = bill + bill*tip
+        
+        result = (total - publicMoney) / Double(people)
         
         self.performSegue(withIdentifier: "gotoResult", sender: self)
     }
@@ -62,9 +63,9 @@ class CaculatorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ResultsViewController
         
-        destinationVC.tipsPercentRes = Int(tipsPercent * 100)
-        destinationVC.peopleNumberRes = Int(peopleNumber)
-        destinationVC.resultRes = result
+        destinationVC.tipRS = Int(tip * 100)
+        destinationVC.peopleRS = people
+        destinationVC.resultRS = result
     }
 }
 
