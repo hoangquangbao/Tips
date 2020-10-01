@@ -78,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061F86FC2526111F00D2A53A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				06E986CB24F86839008ECB64 /* CaculatorViewController.swift */,
+				065ED5C02502831D00C850D6 /* ResultsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		06E986BB24F86838008ECB64 = {
 			isa = PBXGroup;
 			children = (
@@ -103,8 +112,7 @@
 			children = (
 				06E986C724F86839008ECB64 /* AppDelegate.swift */,
 				06E986C924F86839008ECB64 /* SceneDelegate.swift */,
-				06E986CB24F86839008ECB64 /* CaculatorViewController.swift */,
-				065ED5C02502831D00C850D6 /* ResultsViewController.swift */,
+				061F86FC2526111F00D2A53A /* Controllers */,
 				06E986CD24F86839008ECB64 /* Main.storyboard */,
 				06E986D024F8683C008ECB64 /* Assets.xcassets */,
 				06E986D224F8683C008ECB64 /* LaunchScreen.storyboard */,

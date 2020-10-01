@@ -24,8 +24,8 @@ class ResultsViewController: UIViewController {
             resultLable.text = String(format: "%.0f", resultRS)
             notesLable.text = "Split between \(peopleRS) peoples with \(tipRS)% tips"
         } else {
-            resultLable.text = String(format: "%.0f", 0)
-            notesLable.text = "No one should have to pay"
+            resultLable.text = "No Pay!"
+            notesLable.text = "Split between \(peopleRS) peoples with \(tipRS)% tips"
         }
     }
     

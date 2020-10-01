@@ -22,7 +22,7 @@ class CaculatorViewController: UIViewController {
     
     
     var tip: Double = 0
-    var people:Int = 2
+    var people = 2
     var result: Double = 0
     
     
@@ -45,9 +45,8 @@ class CaculatorViewController: UIViewController {
     }
     
     @IBAction func peopleChange(_ sender: UIStepper) {
-        people = Int(sender.value + 1)
-        peopleLable.text = String(format: "%.0f", people)
-        print(people)
+        peopleLable.text = String(format: "%.0f", sender.value)
+        people = Int(sender.value)
     }
     
     @IBAction func caculatorPressed(_ sender: UIButton) {
