@@ -13,6 +13,7 @@ class ResultsViewController: UIViewController {
     var tipRS = 0
     var peopleRS = 2
     var resultRS = 0.0
+    var currencyRS = "₫"
     
     @IBOutlet weak var notesLable: UILabel!
     @IBOutlet weak var resultLable: UILabel!
@@ -21,7 +22,15 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         
         if (resultRS > 0) {
-            resultLable.text = String(format: "%.0f", resultRS)
+            
+            let numberFormatter = NumberFormatter()
+            //If you don't want a $ in the output, change .CurrencyStyle to .DecimalStyle
+            numberFormatter.numberStyle = .decimal
+            numberFormatter.maximumFractionDigits = 0
+            let formattedNumber = numberFormatter.string(from: NSNumber(value:resultRS))
+
+            resultLable.text = formattedNumber! + " " + currencyRS
+            
             notesLable.text = "Split between \(peopleRS) peoples with \(tipRS)% tips"
         } else {
             resultLable.text = "No Pay!"

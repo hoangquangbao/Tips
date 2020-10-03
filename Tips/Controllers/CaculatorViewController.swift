@@ -12,20 +12,27 @@ class CaculatorViewController: UIViewController {
 
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var publicMoneyTextField: UITextField!
-    
     @IBOutlet weak var fiveButton: UIButton!
     @IBOutlet weak var tenButton: UIButton!
     @IBOutlet weak var twentyButton: UIButton!
     @IBOutlet weak var zeroButton: UIButton!
-    
     @IBOutlet weak var peopleLable: UILabel!
+    @IBOutlet weak var currencyPicker: UIPickerView!
     
     
-    var tip: Double = 0
+    var tip = 0
     var people = 2
     var result: Double = 0
+    var currency = "₫"
+    //Link: https://www.xe.com/symbols.php
+    var data = ["₫","$","€","¥","₭","R$","£","лв","₩","лв","ден","₮","₱","₽"]
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        currencyPicker.dataSource = self
+        currencyPicker.delegate = self
+    }
     
     @IBAction func tipsChanged(_ sender: UIButton) {
         
@@ -41,7 +48,7 @@ class CaculatorViewController: UIViewController {
         //The second: Show the selected button by sender.isSelected = true
         sender.isSelected = true
         
-        tip = Double(sender.tag) / Double(100)
+        tip = sender.tag
     }
     
     @IBAction func peopleChange(_ sender: UIStepper) {
@@ -52,7 +59,7 @@ class CaculatorViewController: UIViewController {
     @IBAction func caculatorPressed(_ sender: UIButton) {
         let bill = Double(billTextField.text!) ?? 0.0
         let publicMoney = Double(publicMoneyTextField.text!) ?? 0.0
-        let total = bill + bill*tip
+        let total = bill + bill*Double(tip)/100
         
         result = (total - publicMoney) / Double(people)
         
@@ -62,9 +69,29 @@ class CaculatorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ResultsViewController
         
-        destinationVC.tipRS = Int(tip * 100)
+        destinationVC.tipRS = tip
         destinationVC.peopleRS = people
+        destinationVC.currencyRS = currency
         destinationVC.resultRS = result
     }
 }
 
+extension CaculatorViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return data.count
+    }
+}
+
+extension CaculatorViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return data[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currency = data[row]
+    }
+}
